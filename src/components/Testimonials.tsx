@@ -49,11 +49,11 @@ function Testimonials() {
             >
               {/* Cliente */}
               <div className="flex items-center gap-3">
-                <img
+                {/* <img
                   src={testimonial.image}
                   alt={testimonial.name}
                   className="h-12 w-12 rounded-full object-cover"
-                />
+                /> */}
 
                 <div>
                   <h3 className="text-sm font-bold text-[#101c4f]">
