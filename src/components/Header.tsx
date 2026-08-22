@@ -1,6 +1,6 @@
 import { Menu, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
-import Logo from "../assets/LogoHorizontal.png";
+import Logo from "../assets/LogoHorizontal-optimized.webp";
 
 const navigation = [
   { name: "Inicio", href: "#inicio" },
