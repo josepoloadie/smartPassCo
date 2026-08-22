@@ -1,5 +1,5 @@
 import { MessageCircle } from "lucide-react";
-import Sara from "../assets/sara.png";
+import Sara from "../assets/Sara.png";
 
 function AboutUs() {
   return (
