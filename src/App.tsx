@@ -9,6 +9,7 @@ import Services from "./components/Services";
 import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import WhatsAppFloat from "./components/WhatsappFloat";
 function App() {
   return (
     <>
@@ -22,8 +23,9 @@ function App() {
         <Services />
         <FAQ />
         <CTA />
-        <Footer />
       </main>
+      <Footer />
+      <WhatsAppFloat />
     </>
   );
 }
