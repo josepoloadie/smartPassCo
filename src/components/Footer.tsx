@@ -108,9 +108,38 @@ function Footer() {
             <h3 className="mb-4 text-sm font-bold">Servicios</h3>
 
             <ul className="space-y-2 text-sm text-white/75">
-              <li>Primera vez</li>
-              <li>Renovación</li>
-              <li>Preparación para entrevista</li>
+              <li>
+                <a
+                  href="https://wa.me/573337509047?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20solicitar%20mi%20visa%20americana%20por%20primera%20vez."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-white"
+                >
+                  Primera vez
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://wa.me/573337509047?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20renovar%20mi%20visa%20americana."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-white"
+                >
+                  Renovación
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="https://wa.me/573337509047?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20preparaci%C3%B3n%20para%20mi%20entrevista%20de%20visa%20americana."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-white"
+                >
+                  Preparación para entrevista
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -126,7 +155,7 @@ function Footer() {
 
               <li className="flex items-center gap-2">
                 <Mail size={16} />
-                <span>hola@smartpass.co</span>
+                <span>sospino@smartpassco.co</span>
               </li>
 
               <li className="flex items-center gap-2">
@@ -142,8 +171,23 @@ function Footer() {
 
         {/* Copyright */}
         <div className="py-5 text-center text-xs text-white/60">
-          © 2026 Smart Pass Visas & Immigration Services. Todos los derechos
-          reservados.
+          <p>
+            {" "}
+            © 2026 Smart Pass Visas & Immigration Services. Todos los derechos
+            reservados.
+          </p>
+
+          <p className="mt-2 text-xs text-white/50">
+            Diseñado y desarrollado por{" "}
+            <a
+              href="https://www.linkedin.com/in/josepoloadie/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-white"
+            >
+              José Polo
+            </a>
+          </p>
         </div>
       </div>
     </footer>
