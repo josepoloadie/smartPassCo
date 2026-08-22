@@ -4,11 +4,11 @@ import Logo from "../assets/LogoHorizontal.png";
 
 const navigation = [
   { name: "Inicio", href: "#inicio" },
-  { name: "Testimonios", href: "#testimonios" },
+  { name: "Nosotros", href: "#nosotros" },
   { name: "Proceso", href: "#proceso" },
   { name: "Servicios", href: "#servicios" },
-  { name: "Preguntas Frecuentes", href: "#preguntas" },
-  { name: "Contacto", href: "#contacto" },
+  { name: "Testimonios", href: "#testimonios" },
+  { name: "FAQ", href: "#preguntas" },
 ];
 
 function Header() {
@@ -16,7 +16,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-100 bg-white">
-      <div className="mx-auto flex h-[62px] max-w-[1420px] items-center justify-between px-6 lg:px-8">
+      <div className="mx-auto flex h-[72px] max-w-[1420px] items-center justify-between px-6 lg:px-8">
         {/* Logo */}
         <a
           href="#inicio"
@@ -26,7 +26,7 @@ function Header() {
           <img
             src={Logo}
             alt="Smart Pass"
-            className="h-[70px] w-auto object-contain"
+            className="h-[64px] w-auto object-contain"
           />
         </a>
 

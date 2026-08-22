@@ -1,6 +1,8 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import AboutUs from "./components/AboutUs";
 import Testimonials from "./components/Testimonials";
+
 // import Testimonials2 from "./components/Testimonials2";
 import Process from "./components/Process";
 import Services from "./components/Services";
@@ -13,6 +15,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <AboutUs />
         <Testimonials />
         {/* <Testimonials2 /> */}
         <Process />
