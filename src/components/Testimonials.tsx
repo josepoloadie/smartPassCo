@@ -8,13 +8,13 @@ const testimonials = [
     text: "Quiero recomendar ampliamente a Sara Ospino, por su excelente trabajo y acompañamiento durante el proceso de la visa americana de mis papás (Helim Robles y Marta López). Desde el primer momento fue muy profesional, paciente y clara al explicar cada paso del proceso, ayudándonos a preparar la documentación y, sobre todo, a sentirnos más tranquilos y seguros durante todo el procedimiento. Su asesoría fue fundamental y siempre estuvo pendiente de nuestras dudas y necesidades. Gracias a su apoyo, mis papás pudieron afrontar el proceso con mucha más confianza y organización. Sin duda, volvería a contar con sus servicios y la recomiendo a cualquier persona que esté buscando una asesoría responsable, cercana y de confianza. ❤️",
   },
   {
-    name: "Carlos A. Gómez",
-    type: "Visa de Turismo",
-    text: "La pre-evaluación gratuita me dio la tranquilidad que necesitaba. Me prepararon excelente para la entrevista y todo salió perfecto.",
+    name: "Nora Torres",
+    type: "Renovacion de Visa de Turismo",
+    text: "Mi experiencia con SmartPass ha sido excelente de principio a fin. Sarita fue super atenta, amable y profesional durante todo el proceso. Me explico paso a paso cada detalle y aclaro todas mis dudas e inquietudes sobre la renovacion de mi visa, lo que me dio muchisima tranquilidad. Todo el proceso fue rapido, sencillo y muy bien acompañado. Sin duda, recomiendo a SmartPass a ojos cerrados. ¡Estoy muy agradecida por su excelente atencion y acompañamiento! ❤️"
   },
   {
     name: "Laura M. Sánchez",
-    type: "Renovación de Visa",
+    type: "Renovación de Visa de Turismo",
     text: "Renové mi visa sin complicaciones gracias a su guía. El equipo es muy profesional y siempre estuvieron pendientes.",
   },
 ];
