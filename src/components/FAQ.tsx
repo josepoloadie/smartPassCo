@@ -48,78 +48,93 @@ function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
+    setOpenIndex((current) => (current === index ? null : index));
   };
 
-  // Dividimos las preguntas en dos columnas independientes
+  // Distribuir las preguntas en dos columnas
   const leftColumn = faqs.filter((_, index) => index % 2 === 0);
   const rightColumn = faqs.filter((_, index) => index % 2 !== 0);
 
   const renderFAQ = (faq: (typeof faqs)[number]) => {
     const index = faqs.indexOf(faq);
     const isOpen = openIndex === index;
+    const answerId = `faq-answer-${index}`;
 
     return (
-      <div
+      <article
         key={faq.question}
-        className={`overflow-hidden rounded-lg border transition-all duration-300 ${
-          isOpen ? "border-[#b985e8] shadow-sm" : "border-slate-200"
+        className={`overflow-hidden rounded-2xl border bg-white transition-all duration-300 ${
+          isOpen
+            ? "border-[var(--color-pass)] shadow-md"
+            : "border-[var(--color-bruma)] shadow-sm hover:border-[var(--color-lila)]"
         }`}
       >
         {/* Pregunta */}
         <button
           type="button"
           onClick={() => toggleFAQ(index)}
-          className="flex w-full items-center justify-between gap-4 px-4 py-3.5 text-left"
+          aria-expanded={isOpen}
+          aria-controls={answerId}
+          className="flex min-h-14 w-full items-center justify-between gap-4 px-4 py-4 text-left transition-colors hover:bg-[var(--color-niebla)]/70 focus-visible:outline-2 focus-visible:outline-inset focus-visible:outline-[var(--color-pass)] sm:px-5"
         >
-          <span className="text-sm font-semibold text-[#101c4f]">
+          <span className="text-sm font-semibold leading-6 text-[var(--color-smartpass)] sm:text-base">
             {faq.question}
           </span>
 
           <ChevronDown
-            size={18}
-            className={`shrink-0 text-slate-500 transition-transform duration-300 ${
-              isOpen ? "rotate-180 text-[#5b2bcf]" : ""
+            size={19}
+            aria-hidden="true"
+            className={`shrink-0 text-[var(--color-pass)] transition-transform duration-300 ${
+              isOpen ? "rotate-180" : ""
             }`}
           />
         </button>
 
         {/* Respuesta */}
         <div
+          id={answerId}
+          aria-hidden={!isOpen}
           className={`grid transition-all duration-300 ${
             isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
           }`}
         >
           <div className="overflow-hidden">
-            <p className="px-4 pb-4 text-sm leading-6 text-slate-600">
+            <p className="px-4 pb-5 text-sm leading-7 text-[var(--color-gris-violeta)] sm:px-5">
               {faq.answer}
             </p>
           </div>
         </div>
-      </div>
+      </article>
     );
   };
 
   return (
-    <section id="preguntas" className="bg-white px-6 py-16 lg:px-8">
+    <section
+      id="preguntas"
+      className="bg-[var(--color-white)] px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+    >
       <div className="mx-auto max-w-[1100px]">
-        {/* Título */}
-        <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold text-[#101c4f] lg:text-4xl">
-            Preguntas <span className="text-[#5b2bcf]">frecuentes</span>
+        {/* Encabezado */}
+        <div className="mb-10 text-center sm:mb-12">
+          <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-pass)] sm:text-sm">
+            Estamos para orientarte
+          </span>
+
+          <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-[var(--color-smartpass)] sm:text-4xl">
+            Preguntas{" "}
+            <span className="text-[var(--color-pass)]">frecuentes</span>
           </h2>
 
-          <p className="mt-3 text-sm text-slate-600 lg:text-base">
-            Resolvemos algunas de las dudas más comunes
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[var(--color-gris-violeta)] sm:text-base">
+            Resolvemos algunas de las dudas más comunes sobre la asesoría y el
+            proceso de visa.
           </p>
         </div>
 
-        {/* Dos columnas independientes */}
-        <div className="grid gap-3 md:grid-cols-2 md:gap-x-5 md:items-start">
-          {/* Columna izquierda */}
+        {/* Dos columnas */}
+        <div className="grid items-start gap-3 md:grid-cols-2 md:gap-5">
           <div className="flex flex-col gap-3">{leftColumn.map(renderFAQ)}</div>
 
-          {/* Columna derecha */}
           <div className="flex flex-col gap-3">
             {rightColumn.map(renderFAQ)}
           </div>

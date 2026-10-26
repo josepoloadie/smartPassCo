@@ -7,13 +7,10 @@ function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
-      className="fixed bottom-6 right-6 z-[100] flex h-14 w-14 items-center justify-center rounded-full shadow-lg transition-transform duration-300 hover:scale-110 sm:h-16 sm:w-16"
+      title="Escríbenos por WhatsApp"
+      className="fixed bottom-5 right-4 z-[100] flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-transform duration-200 hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-lavanda)] sm:bottom-6 sm:right-6 sm:h-14 sm:w-14"
     >
-      <img
-        src={WhatsAppIcon}
-        alt="WhatsApp"
-        className="h-full w-full object-contain"
-      />
+      <img src={WhatsAppIcon} alt="" className="h-full w-full object-contain" />
     </a>
   );
 }

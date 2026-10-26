@@ -9,8 +9,8 @@ const testimonials = [
   },
   {
     name: "Nora Torres",
-    type: "Renovacion de Visa de Turismo",
-    text: "Mi experiencia con SmartPass ha sido excelente de principio a fin. Sarita fue super atenta, amable y profesional durante todo el proceso. Me explico paso a paso cada detalle y aclaro todas mis dudas e inquietudes sobre la renovacion de mi visa, lo que me dio muchisima tranquilidad. Todo el proceso fue rapido, sencillo y muy bien acompañado. Sin duda, recomiendo a SmartPass a ojos cerrados. ¡Estoy muy agradecida por su excelente atencion y acompañamiento! ❤️"
+    type: "Renovación de Visa de Turismo",
+    text: "Mi experiencia con SmartPass ha sido excelente de principio a fin. Sarita fue super atenta, amable y profesional durante todo el proceso. Me explico paso a paso cada detalle y aclaro todas mis dudas e inquietudes sobre la renovacion de mi visa, lo que me dio muchisima tranquilidad. Todo el proceso fue rapido, sencillo y muy bien acompañado. Sin duda, recomiendo a SmartPass a ojos cerrados. ¡Estoy muy agradecida por su excelente atencion y acompañamiento! ❤️",
   },
   {
     name: "Laura M. Sánchez",
@@ -22,9 +22,9 @@ const testimonials = [
 const commitments = [
   "Pre-evaluación gratuita antes de cobrar",
   "Asesoría personalizada",
-  "Acompañamiento de principio a fin",
+  "Acompañamiento durante el proceso",
   "Información clara y transparente",
-  "Confidencialidad garantizada",
+  "Tratamiento confidencial de tus datos",
 ];
 
 function Testimonials() {
@@ -32,18 +32,18 @@ function Testimonials() {
     (typeof testimonials)[number] | null
   >(null);
 
-  // Cerrar modal con ESC
+  // Cerrar el modal con Escape y bloquear el scroll mientras está abierto
   useEffect(() => {
+    if (!selectedTestimonial) return;
+
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setSelectedTestimonial(null);
       }
     };
 
-    if (selectedTestimonial) {
-      document.addEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "hidden";
-    }
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
@@ -53,47 +53,64 @@ function Testimonials() {
 
   return (
     <>
-      <section id="testimonios" className="bg-[#f8f9ff] px-6 py-16 lg:px-8">
+      <section
+        id="testimonios"
+        className="bg-[var(--color-niebla)] px-5 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+      >
         <div className="mx-auto max-w-[1420px]">
-          {/* Título */}
-          <h2 className="mb-8 text-3xl font-bold text-[#101c4f] lg:text-4xl">
-            La <span className="text-[#5b2bcf]">confianza</span> de nuestros
-            clientes
-          </h2>
+          {/* Encabezado */}
+          <div className="mb-10 sm:mb-12">
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-pass)] sm:text-sm">
+              Experiencias de clientes
+            </span>
 
-          {/* Contenido */}
-          <div className="grid items-stretch gap-5 lg:grid-cols-4">
-            {/* Testimonios */}
+            <h2 className="mt-3 max-w-3xl text-3xl font-bold leading-tight tracking-tight text-[var(--color-smartpass)] sm:text-4xl">
+              La confianza se construye con{" "}
+              <span className="text-[var(--color-pass)]">acompañamiento</span>
+            </h2>
+
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--color-gris-violeta)] sm:text-base">
+              Conoce las experiencias que algunos clientes han compartido sobre
+              su proceso de asesoría con SmartPass.
+            </p>
+          </div>
+
+          {/* Testimonios y compromisos */}
+          <div className="grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {testimonials.map((testimonial) => (
               <article
                 key={testimonial.name}
-                className="flex min-h-[280px] flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow duration-200 hover:shadow-md"
+                className="flex min-h-[300px] flex-col rounded-2xl border border-[var(--color-bruma)] bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg sm:p-6"
               >
                 {/* Cliente */}
-                <div className="flex items-center gap-3">
-                  <div>
-                    <h3 className="text-sm font-bold text-[#101c4f]">
-                      {testimonial.name}
-                    </h3>
+                <div>
+                  <h3 className="text-sm font-semibold text-[var(--color-smartpass)]">
+                    {testimonial.name}
+                  </h3>
 
-                    <p className="text-xs text-slate-500">{testimonial.type}</p>
+                  <p className="mt-1 text-xs leading-5 text-[var(--color-gris-violeta)]">
+                    {testimonial.type}
+                  </p>
 
-                    {/* Estrellas */}
-                    <div className="mt-1 flex gap-0.5">
-                      {[...Array(5)].map((_, index) => (
-                        <Star
-                          key={index}
-                          size={13}
-                          fill="#f5b800"
-                          className="text-[#f5b800]"
-                        />
-                      ))}
-                    </div>
+                  {/* Estrellas decorativas de valoración */}
+                  <div
+                    className="mt-3 flex gap-1"
+                    aria-label="Valoración mostrada en el testimonio"
+                  >
+                    {[...Array(5)].map((_, index) => (
+                      <Star
+                        key={index}
+                        size={14}
+                        fill="currentColor"
+                        className="text-[var(--color-pass)]"
+                        aria-hidden="true"
+                      />
+                    ))}
                   </div>
                 </div>
 
-                {/* Testimonio */}
-                <p className="mt-5 min-h-[120px] line-clamp-5 text-sm leading-6 text-slate-600">
+                {/* Texto del testimonio */}
+                <p className="mt-4 line-clamp-5 text-sm leading-6 text-[var(--color-gris-violeta)]">
                   “{testimonial.text}”
                 </p>
 
@@ -102,43 +119,41 @@ function Testimonials() {
                   <button
                     type="button"
                     onClick={() => setSelectedTestimonial(testimonial)}
-                    className="mt-2 w-fit text-xs font-medium text-[#5b2bcf] transition-colors hover:text-[#4520a5] hover:underline"
+                    className="mt-3 w-fit text-xs font-semibold text-[var(--color-pass)] transition-colors hover:text-[var(--color-smartpass)] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-pass)]"
                   >
                     Leer testimonio completo →
                   </button>
                 )}
 
-                {/* Estado */}
-                <span className="mt-auto w-fit rounded-md bg-green-100 px-3 py-1 text-[11px] font-semibold text-green-700">
-                  APROBADA
+                {/* Identificador neutral */}
+                <span className="mt-auto w-fit rounded-full bg-[var(--color-niebla)] px-3 py-1.5 text-[11px] font-semibold text-[var(--color-smartpass)]">
+                  Experiencia compartida
                 </span>
               </article>
             ))}
 
-            {/* Compromiso */}
-            <article className="flex min-h-[280px] flex-col rounded-xl border-2 border-[#b985e8] bg-white p-5">
-              {/* Encabezado */}
-              <div className="mb-5 flex items-center gap-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#f1e8ff]">
-                  <ShieldCheck size={21} className="text-[#5b2bcf]" />
+            {/* Compromisos de SmartPass */}
+            <article className="flex min-h-[300px] flex-col rounded-2xl border border-[var(--color-pass)]/40 bg-white p-5 shadow-sm sm:p-6">
+              <div className="mb-5 flex items-start gap-3">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-niebla)] text-[var(--color-pass)]">
+                  <ShieldCheck size={22} aria-hidden="true" />
                 </div>
 
-                <h3 className="text-base font-bold text-[#5b2bcf]">
-                  Comprometidos con tu éxito
+                <h3 className="pt-1 text-base font-semibold leading-6 text-[var(--color-smartpass)]">
+                  Nuestro compromiso contigo
                 </h3>
               </div>
 
-              {/* Beneficios */}
               <ul className="space-y-4">
                 {commitments.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-2 text-sm text-slate-600"
+                    className="flex items-start gap-2.5 text-sm leading-5 text-[var(--color-gris-violeta)]"
                   >
                     <CheckCircle
                       size={17}
-                      className="mt-0.5 shrink-0 text-green-500"
-                      fill="currentColor"
+                      className="mt-0.5 shrink-0 text-[var(--color-pass)]"
+                      aria-hidden="true"
                     />
 
                     <span>{item}</span>
@@ -150,67 +165,64 @@ function Testimonials() {
         </div>
       </section>
 
-      {/* Modal */}
+      {/* Modal de testimonio completo */}
       {selectedTestimonial && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 px-4 py-6 backdrop-blur-sm"
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-[var(--color-noche)]/75 px-4 py-6 backdrop-blur-sm"
           onClick={() => setSelectedTestimonial(null)}
         >
           <div
             role="dialog"
             aria-modal="true"
             aria-labelledby="testimonial-modal-title"
-            className="relative w-full max-w-2xl rounded-2xl bg-white p-6 shadow-2xl sm:p-8"
+            className="relative w-full max-w-2xl rounded-3xl border border-[var(--color-bruma)] bg-white p-6 shadow-2xl sm:p-8"
             onClick={(event) => event.stopPropagation()}
           >
-            {/* Botón cerrar */}
+            {/* Cerrar */}
             <button
               type="button"
               onClick={() => setSelectedTestimonial(null)}
               aria-label="Cerrar testimonio"
-              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-700"
+              className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full text-[var(--color-gris-violeta)] transition-colors hover:bg-[var(--color-niebla)] hover:text-[var(--color-smartpass)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-pass)]"
             >
-              <X size={20} />
+              <X size={20} aria-hidden="true" />
             </button>
 
-            {/* Cliente */}
-            <div className="pr-10">
+            {/* Datos del cliente */}
+            <div className="pr-12">
               <h3
                 id="testimonial-modal-title"
-                className="text-xl font-bold text-[#101c4f]"
+                className="text-xl font-bold text-[var(--color-smartpass)] sm:text-2xl"
               >
                 {selectedTestimonial.name}
               </h3>
 
-              <p className="mt-1 text-sm text-slate-500">
+              <p className="mt-1 text-sm text-[var(--color-gris-violeta)]">
                 {selectedTestimonial.type}
               </p>
 
-              {/* Estrellas */}
-              <div className="mt-2 flex gap-0.5">
+              <div className="mt-3 flex gap-1" aria-hidden="true">
                 {[...Array(5)].map((_, index) => (
                   <Star
                     key={index}
                     size={16}
-                    fill="#f5b800"
-                    className="text-[#f5b800]"
+                    fill="currentColor"
+                    className="text-[var(--color-pass)]"
                   />
                 ))}
               </div>
             </div>
 
-            {/* Separador */}
-            <div className="my-5 h-px bg-slate-100" />
+            <div className="my-5 h-px bg-[var(--color-bruma)]" />
 
-            {/* Testimonio completo */}
-            <p className="max-h-[60vh] overflow-y-auto pr-2 text-sm leading-7 text-slate-600 sm:text-base">
+            {/* Texto completo */}
+            <p className="max-h-[60vh] overflow-y-auto pr-2 text-sm leading-7 text-[var(--color-gris-violeta)] sm:text-base">
               “{selectedTestimonial.text}”
             </p>
 
-            {/* Estado */}
             <div className="mt-6">
-              <span className="inline-block rounded-md bg-green-100 px-3 py-1 text-[11px] font-semibold text-green-700">
-                APROBADA
+              <span className="inline-block rounded-full bg-[var(--color-niebla)] px-3 py-1.5 text-[11px] font-semibold text-[var(--color-smartpass)]">
+                Experiencia compartida
               </span>
             </div>
           </div>

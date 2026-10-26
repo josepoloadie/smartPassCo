@@ -17,10 +17,10 @@ function App() {
       <main>
         <Hero />
         <AboutUs />
-        <Testimonials />
-        {/* <Testimonials2 /> */}
         <Process />
         <Services />
+        <Testimonials />
+        {/* <Testimonials2 /> */}
         <FAQ />
         <CTA />
       </main>

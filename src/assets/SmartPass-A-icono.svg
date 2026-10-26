@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 120 120"><g id="icono">
+<rect x="30" y="14" width="68" height="94" rx="12" fill="#B79CF5"/>
+<rect x="18" y="8" width="70" height="98" rx="12" fill="#3B1A78"/>
+<g id="globo" fill="none" stroke="#C9B6F8" stroke-width="3"><circle cx="53" cy="44" r="19"/><ellipse cx="53" cy="44" rx="8" ry="19"/><path d="M34 44H72"/></g>
+<rect x="34" y="74" width="22" height="5" rx="2.5" fill="#6D3FC7"/>
+<g id="check"><circle cx="84" cy="86" r="23" fill="#7C4DDB" stroke="#FFFFFF" stroke-width="6"/>
+<path d="M73 86L81.5 94.5L96 78" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></g></g></svg>

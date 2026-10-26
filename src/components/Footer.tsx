@@ -1,189 +1,218 @@
 import whatsapp from "../assets/whatsapp.png";
 import instagram from "../assets/instagram.png";
-import logo from "../assets/LogoHorizontal.png";
-import { Mail, MapPin, MessageCircle } from "lucide-react";
+import logo from "../assets/LogoHorizontal.svg";
+import { Mail, MapPin, MessageCircle, ArrowUpRight } from "lucide-react";
+
+const WHATSAPP_NUMBER = "573337509047";
+
+const quickLinks = [
+  { label: "Inicio", href: "#inicio" },
+  { label: "Nosotros", href: "#nosotros" },
+  { label: "Proceso", href: "#proceso" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Testimonios", href: "#testimonios" },
+  { label: "Preguntas frecuentes", href: "#preguntas" },
+  { label: "Contacto", href: "#contacto" },
+];
+
+const services = [
+  {
+    label: "Primera vez",
+    message:
+      "Hola, quiero información para solicitar mi visa americana por primera vez.",
+  },
+  {
+    label: "Renovación",
+    message: "Hola, quiero información para renovar mi visa americana.",
+  },
+  {
+    label: "Preparación para entrevista",
+    message:
+      "Hola, quiero información sobre la preparación para mi entrevista de visa americana.",
+  },
+];
 
 function Footer() {
+  const serviceUrl = (message: string) =>
+    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+  const linkClass =
+    "text-sm text-[var(--color-lavanda)] transition-colors duration-200 hover:!text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-lavanda)]";
+
+  const contactLinkClass =
+    "flex items-start gap-3 text-[var(--color-lavanda)] transition-colors duration-200 hover:!text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-lavanda)]";
+
   return (
-    <footer className="bg-[#111c50] px-6 pt-12 text-white lg:px-8">
-      <div className="mx-auto max-w-[1200px]">
+    <footer className="relative overflow-hidden bg-[var(--color-noche)] px-5 pt-12 text-white sm:px-6 sm:pt-14 lg:px-8">
+      {/* Decoración sutil de marca */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[var(--color-smartpass)] opacity-30 blur-3xl"
+      />
+
+      <div className="relative mx-auto max-w-[1200px]">
         {/* Contenido principal */}
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {/* Marca */}
           <div>
-            <img
-              src={logo}
-              alt="Smart Pass Visas & Immigration Services"
-              className="mb-4 h-18 w-auto brightness-0 invert"
-            />
+            <a
+              href="#inicio"
+              aria-label="SmartPassCo, volver al inicio"
+              className="mb-4 inline-flex rounded-xl bg-white px-3 py-2 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-lavanda)]"
+            >
+              <img
+                src={logo}
+                alt="SmartPass Visas & Immigration Services"
+                loading="lazy"
+                className="h-auto max-h-[56px] w-auto max-w-[200px] object-contain"
+              />
+            </a>
 
-            <p className="max-w-[250px] text-sm leading-6 text-white/75">
-              Asesoría profesional para visas americanas. Te acompañamos en cada
-              paso del proceso.
+            <p className="max-w-[270px] text-sm leading-6 text-[var(--color-lavanda)]">
+              Asesoría y acompañamiento para tu proceso de visa americana.
+              Información clara para dar el siguiente paso con confianza.
             </p>
 
-            {/* Redes */}
-            <p className="mt-5 text-sm font-medium">
+            {/* Redes sociales */}
+            <p className="mt-6 text-sm font-semibold text-white">
               Síguenos en redes sociales
             </p>
 
-            <div className="flex items-center gap-4">
-              {/* Instagram */}
+            <div className="mt-3 flex items-center gap-3">
               <a
                 href="https://instagram.com/smartpass.co"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="transition-transform hover:scale-110"
+                aria-label="Instagram de SmartPassCo (abre en una pestaña nueva)"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--color-gris-violeta)]/50 bg-white/5 transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-lavanda)]"
               >
                 <img
                   src={instagram}
-                  alt="Instagram"
-                  className="w-6 h-6 object-contain"
+                  alt=""
+                  className="h-5 w-5 object-contain"
                 />
               </a>
 
-              {/* WhatsApp */}
               <a
-                href="https://wa.me/573337509047"
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="WhatsApp"
-                className="transition-transform hover:scale-110"
+                aria-label="Contactar a SmartPassCo por WhatsApp (abre en una pestaña nueva)"
+                className="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--color-gris-violeta)]/50 bg-white/5 transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-lavanda)]"
               >
-                <img
-                  src={whatsapp}
-                  alt="WhatsApp"
-                  className="w-6 h-6 object-contain"
-                />
+                <img src={whatsapp} alt="" className="h-5 w-5 object-contain" />
               </a>
             </div>
           </div>
 
-          {/* Enlaces */}
+          {/* Enlaces rápidos */}
           <div>
-            <h3 className="mb-4 text-sm font-bold">Enlaces rápidos</h3>
+            <h3 className="mb-5 text-sm font-semibold text-white">
+              Enlaces rápidos
+            </h3>
 
-            <ul className="space-y-2 text-sm text-white/75">
-              <li>
-                <a href="#inicio" className="hover:text-white">
-                  Inicio
-                </a>
-              </li>
-
-              <li>
-                <a href="#servicios" className="hover:text-white">
-                  Servicios
-                </a>
-              </li>
-
-              <li>
-                <a href="#proceso" className="hover:text-white">
-                  Proceso
-                </a>
-              </li>
-
-              <li>
-                <a href="#testimonios" className="hover:text-white">
-                  Testimonios
-                </a>
-              </li>
-
-              <li>
-                <a href="#preguntas" className="hover:text-white">
-                  Preguntas frecuentes
-                </a>
-              </li>
-
-              <li>
-                <a href="#contacto" className="hover:text-white">
-                  Contacto
-                </a>
-              </li>
+            <ul className="space-y-3">
+              {quickLinks.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className={linkClass}>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Servicios */}
           <div>
-            <h3 className="mb-4 text-sm font-bold">Servicios</h3>
+            <h3 className="mb-5 text-sm font-semibold text-white">
+              Nuestros servicios
+            </h3>
 
-            <ul className="space-y-2 text-sm text-white/75">
-              <li>
-                <a
-                  href="https://wa.me/573337509047?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20solicitar%20mi%20visa%20americana%20por%20primera%20vez."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-white"
-                >
-                  Primera vez
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="https://wa.me/573337509047?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20renovar%20mi%20visa%20americana."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-white"
-                >
-                  Renovación
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="https://wa.me/573337509047?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20preparaci%C3%B3n%20para%20mi%20entrevista%20de%20visa%20americana."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-colors hover:text-white"
-                >
-                  Preparación para entrevista
-                </a>
-              </li>
+            <ul className="space-y-3">
+              {services.map((service) => (
+                <li key={service.label}>
+                  <a
+                    href={serviceUrl(service.message)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-start gap-1 leading-6 ${linkClass}`}
+                  >
+                    <span>{service.label}</span>
+                    <ArrowUpRight
+                      size={14}
+                      className="mt-1 shrink-0"
+                      aria-hidden="true"
+                    />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contacto */}
-          <div id="contacto">
-            <h3 className="mb-4 text-sm font-bold">Contacto</h3>
+          <div id="contacto" className="scroll-mt-24">
+            <h3 className="mb-5 text-sm font-semibold text-white">Hablemos</h3>
 
-            <ul className="space-y-3 text-sm text-white/75">
-              <li className="flex items-center gap-2">
-                <MessageCircle size={16} />
-                <span>+57 333 750 9047</span>
+            <ul className="space-y-4 text-sm">
+              <li>
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={contactLinkClass}
+                >
+                  <MessageCircle
+                    size={18}
+                    className="mt-0.5 shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span>+57 333 750 9047</span>
+                </a>
               </li>
 
-              <li className="flex items-center gap-2">
-                <Mail size={16} />
-                <span>sospino@smartpassco.co</span>
+              <li>
+                <a
+                  href="mailto:sospino@smartpassco.co"
+                  className={contactLinkClass}
+                >
+                  <Mail
+                    size={18}
+                    className="mt-0.5 shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span className="break-all">sospino@smartpassco.co</span>
+                </a>
               </li>
 
-              <li className="flex items-center gap-2">
-                <MapPin size={16} />
-                <span>Colombia</span>
+              <li className="flex items-start gap-3 text-[var(--color-lavanda)]">
+                <MapPin
+                  size={18}
+                  className="mt-0.5 shrink-0"
+                  aria-hidden="true"
+                />
+                <span>Colombia · Atención remota</span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Línea */}
-        <div className="mt-10 border-t border-white/10" />
+        {/* Separador */}
+        <div className="mt-12 h-px bg-[var(--color-gris-violeta)]/60" />
 
         {/* Copyright */}
-        <div className="py-5 text-center text-xs text-white/60">
-          <p>
-            {" "}
-            © 2026 Smart Pass Visas & Immigration Services. Todos los derechos
-            reservados.
+        <div className="flex flex-col items-center gap-3 py-6 text-center sm:flex-row sm:justify-between sm:text-left">
+          <p className="text-xs leading-5 text-[var(--color-lavanda)]">
+            © {new Date().getFullYear()} Smart Pass Visas & Immigration
+            Services. Todos los derechos reservados.
           </p>
 
-          <p className="mt-2 text-xs text-white/50">
+          <p className="text-xs text-[var(--color-lavanda)]">
             Diseñado y desarrollado por{" "}
             <a
               href="https://www.linkedin.com/in/josepoloadie/"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition hover:text-white"
+              className="font-semibold text-white underline decoration-[var(--color-pass)] underline-offset-4 transition-colors hover:!text-[var(--color-lavanda)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-lavanda)]"
             >
               José Polo
             </a>

@@ -1,4 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+
+:root {
+  /* Paleta oficial SmartPassCo */
+  --color-smartpass: #3b1a78;
+  --color-pass: #7c4ddb;
+  --color-lila: #b79cf5;
+  --color-noche: #1e0b45;
+  --color-gris-violeta: #6b5b95;
+  --color-lavanda: #c4b5fd;
+  --color-bruma: #e6dcfa;
+  --color-niebla: #f3effb;
+  --color-white: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+  color: var(--color-noche);
+  background: var(--color-white);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 * {
   box-sizing: border-box;
@@ -6,11 +29,45 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #ffffff;
-  color: #111827;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: var(--color-white);
+  color: var(--color-noche);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: var(--color-pass);
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-smartpass);
+}
+
+::selection {
+  color: var(--color-white);
+  background: var(--color-smartpass);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-pass);
+  outline-offset: 3px;
 }
