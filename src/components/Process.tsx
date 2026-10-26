@@ -60,9 +60,8 @@ function Process() {
 
         {/* Pasos del proceso */}
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
-          {steps.map((step, index) => {
+          {steps.map((step) => {
             const Icon = step.icon;
-            const isLast = index === steps.length - 1;
 
             return (
               <article
