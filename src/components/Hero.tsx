@@ -86,30 +86,17 @@ ${formData.mensaje}`;
     >
       {/* Imagen de fondo */}
       <div
-        aria-hidden="true"
         className="absolute inset-0 bg-cover bg-[72%_center] opacity-90 lg:bg-[64%_center] lg:opacity-100"
         style={{
           backgroundImage: `url(${heroBackground})`,
         }}
       />
 
-      {/* Protección de lectura en móvil */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-white/90 to-white/75 lg:hidden"
-      />
+      {/* Protección para el contenido */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/70 to-white/20 lg:hidden" />
 
-      {/* Protección de lectura en escritorio */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 hidden bg-gradient-to-r from-white via-white/95 via-45% to-white/10 lg:block"
-      />
-
-      {/* Decoración sutil de marca */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-32 top-16 -z-10 h-72 w-72 rounded-full bg-[var(--color-bruma)]/50 blur-3xl"
-      />
+      {/* Gradiente para desktop */}
+      <div className="absolute inset-0 hidden lg:block bg-gradient-to-r from-white via-white/10 to-white/5" />
 
       <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-6 px-5 py-6 sm:px-6 sm:py-8 lg:grid-cols-[1.18fr_0.82fr] lg:gap-6 lg:px-8 lg:py-7">
         {/* Columna izquierda */}
@@ -144,11 +131,6 @@ ${formData.mensaje}`;
               </p>
             </div>
           </div>
-
-          <p className="mt-5 max-w-lg text-xs leading-5 text-[var(--color-gris-violeta)] sm:text-sm">
-            Te brindamos orientación y preparación. La decisión final sobre la
-            visa corresponde exclusivamente al consulado.
-          </p>
         </div>
 
         {/* Formulario */}
