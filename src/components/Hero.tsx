@@ -77,7 +77,7 @@ ${formData.mensaje}`;
   };
 
   const inputClasses =
-    "h-12 w-full rounded-xl border border-[var(--color-bruma)] bg-white pl-11 pr-4 text-sm text-[var(--color-noche)] outline-none transition placeholder:text-[var(--color-gris-violeta)] focus:border-[var(--color-pass)] focus:ring-2 focus:ring-[var(--color-pass)]/20";
+    "h-9 w-full rounded-lg border border-[var(--color-bruma)] bg-white pl-10 pr-3 text-[14px] text-[var(--color-noche)] outline-none transition placeholder:text-[14px] placeholder:text-[var(--color-gris-violeta)] focus:border-[var(--color-pass)] focus:ring-2 focus:ring-[var(--color-pass)]/20";
 
   return (
     <section
@@ -87,7 +87,7 @@ ${formData.mensaje}`;
       {/* Imagen de fondo */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-20 bg-cover bg-[72%_center] opacity-50 sm:opacity-65 lg:bg-[64%_center] lg:opacity-100"
+        className="absolute inset-0 bg-cover bg-[72%_center] opacity-90 lg:bg-[64%_center] lg:opacity-100"
         style={{
           backgroundImage: `url(${heroBackground})`,
         }}
@@ -111,29 +111,24 @@ ${formData.mensaje}`;
         className="pointer-events-none absolute -left-32 top-16 -z-10 h-72 w-72 rounded-full bg-[var(--color-bruma)]/50 blur-3xl"
       />
 
-      <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-10 px-5 py-12 sm:px-6 sm:py-16 lg:grid-cols-[1.18fr_0.82fr] lg:gap-6 lg:px-8 lg:py-16">
+      <div className="mx-auto grid max-w-[1180px] grid-cols-1 items-center gap-6 px-5 py-6 sm:px-6 sm:py-8 lg:grid-cols-[1.18fr_0.82fr] lg:gap-6 lg:px-8 lg:py-7">
         {/* Columna izquierda */}
         <div className="relative z-10">
-          <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-bruma)] bg-white/90 px-3.5 py-2 text-xs font-semibold tracking-wide text-[var(--color-smartpass)] shadow-sm sm:text-sm">
-            <span className="h-2 w-2 rounded-full bg-[var(--color-pass)]" />
-            Tu proceso de visa, acompañado
-          </span>
-
-          <h1 className="mt-5 max-w-2xl text-4xl font-bold leading-[1.12] tracking-tight text-[var(--color-smartpass)] sm:text-5xl lg:text-[52px]">
-            Tu próximo viaje comienza con una buena preparación.
+          <h1 className="mt-3 max-w-2xl text-3xl font-bold leading-[1.12] tracking-tight text-[var(--color-smartpass)] sm:text-4xl lg:text-[46px]">
+            Asesoría profesional
             <span className="mt-2 block text-[var(--color-pass)]">
-              Te acompañamos con tu visa americana.
+              para tu visa americana
             </span>
           </h1>
 
-          <p className="mt-5 max-w-xl text-base leading-7 text-[var(--color-noche)] sm:text-lg sm:leading-8">
+          <p className="mt-4 max-w-xl text-sm leading-6 text-[var(--color-noche)] sm:text-base sm:leading-7">
             Recibe orientación personalizada, información clara y preparación
             para tu entrevista consular. Te acompañamos en cada etapa del
             proceso.
           </p>
 
           {/* Pre-evaluación gratuita */}
-          <div className="mt-7 flex w-full max-w-[470px] items-start gap-3 rounded-2xl border border-[var(--color-bruma)] bg-[var(--color-niebla)]/95 px-4 py-4 shadow-sm sm:gap-4 sm:px-5 sm:py-5">
+          <div className="mt-6 flex w-full max-w-[450px] items-start gap-3 rounded-2xl border border-[var(--color-bruma)] bg-[var(--color-niebla)]/95 px-4 py-4 shadow-sm">
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white text-[var(--color-pass)] shadow-sm">
               <Gift size={23} strokeWidth={2} aria-hidden="true" />
             </div>
@@ -158,26 +153,22 @@ ${formData.mensaje}`;
 
         {/* Formulario */}
         <div className="relative z-10 lg:translate-x-8 xl:translate-x-12">
-          <div className="mx-auto w-full max-w-[410px] rounded-3xl border border-[var(--color-bruma)] bg-white p-5 shadow-[0_20px_60px_rgba(30,11,69,0.14)] sm:p-7">
+          <div className="mx-auto w-full max-w-[370px] rounded-3xl border border-[var(--color-bruma)] bg-white p-4 shadow-[0_20px_60px_rgba(30,11,69,0.14)] sm:p-5">
             <div className="text-center">
-              <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-gris-violeta)]">
-                Estamos aquí para ayudarte
-              </span>
-
-              <h2 className="mt-2 text-xl font-bold leading-snug text-[var(--color-smartpass)] sm:text-2xl">
+              <h2 className="mt-1 text-lg font-bold leading-snug text-[var(--color-smartpass)] sm:text-xl">
                 Agenda tu pre-evaluación
               </h2>
 
-              <p className="mt-2 text-3xl font-bold text-[var(--color-pass)]">
+              <p className="mt-1 text-2xl font-bold text-[var(--color-pass)]">
                 GRATIS
               </p>
 
-              <p className="mt-2 text-sm leading-6 text-[var(--color-gris-violeta)]">
+              <p className="mt-1 text-xs leading-5 text-[var(--color-gris-violeta)]">
                 Cuéntanos sobre tu caso y conversemos sobre tu proceso.
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="mt-6 space-y-3.5">
+            <form onSubmit={handleSubmit} className="mt-4 space-y-2.5">
               {/* Nombre */}
               <div className="relative">
                 <User
@@ -247,9 +238,9 @@ ${formData.mensaje}`;
                   name="tipoVisa"
                   value={formData.tipoVisa}
                   onChange={handleChange}
-                  aria-label="Tipo de visa"
                   required
-                  className="h-12 w-full appearance-none rounded-xl border border-[var(--color-bruma)] bg-white px-4 pr-10 text-sm text-[var(--color-noche)] outline-none transition focus:border-[var(--color-pass)] focus:ring-2 focus:ring-[var(--color-pass)]/20"
+                  style={{ fontSize: "14px" }}
+                  className="h-9 w-full appearance-none rounded-lg border border-[var(--color-bruma)] bg-white px-3 pr-10 text-[14px] text-[var(--color-noche)] outline-none focus:border-[var(--color-pass)]"
                 >
                   <option value="" disabled>
                     ¿Qué tipo de visa necesitas?
@@ -272,24 +263,24 @@ ${formData.mensaje}`;
                 name="mensaje"
                 value={formData.mensaje}
                 onChange={handleChange}
-                rows={4}
+                rows={2}
                 placeholder="Cuéntanos brevemente tu caso..."
                 aria-label="Descripción de tu caso"
                 required
-                className="w-full resize-y rounded-xl border border-[var(--color-bruma)] bg-white px-4 py-3 text-sm leading-6 text-[var(--color-noche)] outline-none transition placeholder:text-[var(--color-gris-violeta)] focus:border-[var(--color-pass)] focus:ring-2 focus:ring-[var(--color-pass)]/20"
+                className="w-full resize-y rounded-lg border border-[var(--color-bruma)] bg-white px-3 py-2 text-[14px] leading-4 text-[var(--color-noche)] outline-none transition placeholder:text-[14px] placeholder:text-[var(--color-gris-violeta)] focus:border-[var(--color-pass)] focus:ring-2 focus:ring-[var(--color-pass)]/20"
               />
 
               {/* Botón */}
               <button
                 type="submit"
-                className="flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[var(--color-pass)] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-[var(--color-smartpass)] hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-pass)]"
+                className="flex min-h-9 w-full items-center justify-center gap-2 rounded-lg bg-[var(--color-pass)] px-3 py-2 text-xs font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[var(--color-smartpass)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-pass)]"
               >
                 <MessageCircle size={18} aria-hidden="true" />
                 Quiero mi pre-evaluación gratis
               </button>
 
               {/* Nota de privacidad */}
-              <div className="flex items-center justify-center gap-1.5 pt-1 text-[11px] leading-5 text-[var(--color-gris-violeta)]">
+              <div className="flex items-center justify-center gap-1.5 pt-1 text-[10px] leading-5 text-[var(--color-gris-violeta)]">
                 <Lock size={13} aria-hidden="true" />
                 Usaremos tus datos para atender tu solicitud.
               </div>
