@@ -202,8 +202,7 @@ function Footer() {
         {/* Copyright */}
         <div className="flex flex-col items-center gap-3 py-6 text-center sm:flex-row sm:justify-between sm:text-left">
           <p className="text-xs leading-5 text-[var(--color-lavanda)]">
-            © {new Date().getFullYear()} Smart Pass Visas & Immigration
-            Services. Todos los derechos reservados.
+            © {new Date().getFullYear()} Smart Pass | Tu mundo más cerca. Todos los derechos reservados.
           </p>
 
           <p className="text-xs text-[var(--color-lavanda)]">
